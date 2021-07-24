@@ -21,42 +21,55 @@
 
 
 module systolic_array #(parameter ROWS = 32, parameter COLS = 32)(
-    (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S_AXIS TDATA" *)
     input [31:0] s_axis_tdata, // Transfer Data (optional)
-    (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S_AXIS TKEEP" *)
-    input [2:0] s_axis_tkeep, // Transfer Null Byte Indicators (optional)
-    (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S_AXIS TLAST" *)
-    input s_axis_tlast, // Packet Boundary Indicator (optional)
-    (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S_AXIS TVALID" *)
     input s_axis_tvalid, // Transfer valid (required)
-    (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S_AXIS TREADY" *)
-    output s_axis_tready, // Transfer ready (optional)
-    input clk,
-    input [ROWS-1:0][15:0] activation_in,
+    input clk, weight_transfer,
+    input [ROWS*16-1:0] activation_in,
     input [ROWS-1:0] activation_in_valid,
     input [$clog2(ROWS)-1:0] last_row,
     input [$clog2(COLS)-1:0] last_col,
-    output logic [COLS-1:0][15:0] partialsum_out,
+    output logic [COLS*16-1:0] partialsum_out,
     output logic [COLS-1:0] partialsum_out_valid
     );
-    
+       
     logic [ROWS-1:0][COLS:0] activation_valid;
     logic [ROWS-1:0][COLS:0][15:0] activation;
     logic [ROWS:0][COLS-1:0] partialsum_valid;
     logic [ROWS:0][COLS-1:0][15:0] partialsum;
-    logic [ROWS-1:0][COLS-1:0][15:0] weight;
+    logic [ROWS-1:0][COLS-1:0][15:0] weight, weight_buff;
+    logic [ROWS*COLS-1:0][15:0] weight_buff_d;
+    
+    always_ff @(posedge clk) begin
+        for(int i = 0; i < ROWS; i += 1) begin
+            for(int j = 0; j < COLS; j += 1) begin
+                if ((i <= last_row) && (j <= last_col) && weight_transfer)
+                    weight[i][j] <= weight_buff[i][j];
+                if ((i <= last_row) && s_axis_tvalid)
+                    weight_buff[i][j] <= weight_buff_d[i*COLS+j];
+            end
+        end   
+    end
+    
+    
+    always_comb begin
+        weight_buff_d[0] = s_axis_tdata[15:0];
+        weight_buff_d[1] = s_axis_tdata[31:16];
+        for(int i = 2; i < ROWS*COLS; i += 1) 
+             weight_buff_d[i] <=  weight_buff_d[i-1];
+    end
+    
     
     always_comb begin
         for(int i = 0; i < ROWS; i += 1) begin
             activation_valid[i][0] = activation_in_valid[i];
-            activation[i][0] = activation_in[i];
+            activation[i][0] = activation_in[i*16+:16];
         end
         
         for(int i = 0; i < COLS; i += 1) begin
             partialsum_valid[ROWS][i] = 0;
             partialsum[ROWS][i] = 0;
             partialsum_out_valid[i] = partialsum_valid[0][i];
-            partialsum_out[i] = partialsum[0][i];
+            partialsum_out[i*16+:16] = partialsum[0][i];
         end    
     end
     
