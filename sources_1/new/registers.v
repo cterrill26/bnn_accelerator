@@ -39,12 +39,19 @@ module registers(
     output reg s_apb_pslverr, // Slave Error Response (required)
     input clk, resetn,
     output reg weight_transfer,
-    output reg [4:0] last_row, last_col
+    output reg [4:0] last_row,
+    output reg [4:0] last_col,
+    output reg systolic_start,
+    output reg [10:0] activations_addr_start,
+    output reg [5:0] batch
     );
     
     //address 0x0 write a 1 to transfer buffered weights
     //address 0x4 write the last active row of the systolic array
     //address 0x8 write the last active column of the systolic array
+    //address 0xc write a 1 to start the systolic array
+    //address 0x10 write the start address of reading out of the activation buffers
+    //address 0x14 write the batch size
     
     localparam NUM_STATES = 2;
     localparam IDLE = 1;
@@ -60,17 +67,28 @@ module registers(
             weight_transfer <= 0;
             last_row <= 0;
             last_col <= 0;
+            systolic_start <= 0;
+            activations_addr_start <= 0;
+            batch <= 0;
             state <= IDLE;
             s_apb_pslverr <= 0;
         end
         else begin
-            weight_transfer <= (state == IDLE) && (s_apb_paddr[4:2] == 0) && s_apb_psel && s_apb_pwrite && s_apb_prdata[0];
+            weight_transfer <= (state == IDLE) && (s_apb_paddr[4:0] == 'h0) && s_apb_psel && s_apb_pwrite && s_apb_prdata[0];
+            systolic_start  <= (state == IDLE) && (s_apb_paddr[4:0] == 'hc) && s_apb_psel && s_apb_pwrite && s_apb_prdata[0];
             
-            if((state == IDLE) && (s_apb_paddr[4:2] == 1) && s_apb_psel && s_apb_pwrite)
+            
+            if((state == IDLE) && (s_apb_paddr[4:0] == 'h4) && s_apb_psel && s_apb_pwrite)
                 last_row <= s_apb_prdata[4:0];
             
-            if((state == IDLE) && (s_apb_paddr[4:2] == 2) && s_apb_psel && s_apb_pwrite)
+            if((state == IDLE) && (s_apb_paddr[4:0] == 'h8) && s_apb_psel && s_apb_pwrite)
                 last_col <= s_apb_prdata[4:0];
+            
+            if((state == IDLE) && (s_apb_paddr[4:0] == 'h10) && s_apb_psel && s_apb_pwrite)
+                activations_addr_start <= s_apb_prdata[10:0];
+            
+            if((state == IDLE) && (s_apb_paddr[4:0] == 'h14) && s_apb_psel && s_apb_pwrite)
+                batch <= s_apb_prdata[5:0];
             
             if (state == IDLE && s_apb_psel)
                 state <= RESPONDED;
