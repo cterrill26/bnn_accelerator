@@ -670,6 +670,11 @@
           "start": {
             "direction": "I"
           },
+          "last_row": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
           "addr_start": {
             "direction": "I",
             "left": "10",

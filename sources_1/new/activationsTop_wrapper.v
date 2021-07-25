@@ -38,12 +38,27 @@ module activationsTop_wrapper(
     (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTA RST" *)
     input s_rst, // Reset Signal (required)
     input clk, resetn, start,
+    input [4:0] last_row,
     input [10:0] addr_start, 
     input [5:0] batch,
     output [32*16-1:0] activation_in,
     output [32-1:0] activation_in_valid 
     );
     
-    
+    activationsTop activationsTop(
+        .s_en(s_en), 
+        .s_dout(s_dout), 
+        .s_din(s_din),
+        .s_we(s_we), 
+        .s_addr(s_addr), 
+        .clk(clk), 
+        .resetn(resetn), 
+        .start(start),
+        .last_row(last_row),
+        .addr_start(addr_start), 
+        .batch(batch),
+        .activation_in(activation_in),
+        .activation_in_valid(activation_in_valid)
+    );
     
 endmodule

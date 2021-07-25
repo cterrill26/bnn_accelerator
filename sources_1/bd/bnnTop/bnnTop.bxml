@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="bnnTop" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1627170645"/>
-    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1627170645"/>
-    <Generation Name="SIMULATION" State="STALE" Timestamp="1627170645"/>
-    <Generation Name="HW_HANDOFF" State="STALE" Timestamp="1627170645"/>
+    <Generation Name="SYNTHESIS" State="RESET" Timestamp="1627212805"/>
+    <Generation Name="IMPLEMENTATION" State="RESET" Timestamp="1627212805"/>
+    <Generation Name="SIMULATION" State="RESET" Timestamp="1627212805"/>
+    <Generation Name="HW_HANDOFF" State="RESET" Timestamp="1627212805"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\bnnTop_blk_mem_gen_0_1\bnnTop_blk_mem_gen_0_1.xci" Type="IP">
         <Instance HierarchyPath="blk_mem_gen_0"/>

@@ -147,7 +147,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>89b2da2d</spirit:value>
+            <spirit:value>7d03a73a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -160,7 +160,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>89b2da2d</spirit:value>
+            <spirit:value>7d03a73a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -324,6 +324,23 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
+        <spirit:name>last_row</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">4</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
         <spirit:name>addr_start</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
@@ -428,12 +445,13 @@
       </xilinx:taxonomies>
       <xilinx:displayName>activationsTop_wrapper_v1_0</xilinx:displayName>
       <xilinx:autoFamilySupportLevel>level_1</xilinx:autoFamilySupportLevel>
+      <xilinx:supportsAutoXDC>dynamic_params</xilinx:supportsAutoXDC>
       <xilinx:definitionSource>module_ref</xilinx:definitionSource>
       <xilinx:designToolContexts>
         <xilinx:designToolContext>IPI</xilinx:designToolContext>
       </xilinx:designToolContexts>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2021-07-24T23:50:18Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2021-07-25T11:33:24Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2020.1</xilinx:xilinxVersion>
