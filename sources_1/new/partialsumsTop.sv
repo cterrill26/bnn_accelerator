@@ -30,16 +30,36 @@ module partialsumsTop(
     input [32*16-1:0] partialsum_out,
     input [32-1:0] partialsum_out_valid,
     input [4:0] last_col,
-    output done
+    output logic done
     );
+    
+    logic partialsum_out_valid_reg;
+    
+    always_ff @(posedge clk) begin
+        if(~resetn) begin
+            partialsum_out_valid_reg <= 0;
+            done <= 0;
+        end
+        else begin
+            partialsum_out_valid_reg <= partialsum_out_valid[last_col];
+            done <= partialsum_out_valid_reg & ~partialsum_out_valid[last_col];
+        end       
+    end
     
     generate 
         for(genvar i = 0; i < 32; i += 1) begin : GEN_PARTIALSUMSMEM
             partialsumsMem partialsumsMem(
                 .clk(clk),
                 .resetn(resetn),
-                .start(start),
-            
+                .s_en(s_en && (i <= last_col)),
+                .s_dout(s_dout[16*i+:16]),
+                .s_addr(s_addr[16:6]),
+                .start(start && (i <= last_col)),
+                .accumulate(accumulate),
+                .address_start(address_start),
+                .batch(batch),
+                .partialsum_out(partialsum_out[i*16+:16]),
+                .partialsum_out_valid(partialsum_out_valid[i])            
             );
         end
     endgenerate

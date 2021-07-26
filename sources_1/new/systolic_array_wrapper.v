@@ -24,7 +24,7 @@ module systolic_array_wrapper(
     (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S_AXIS TDATA" *)
     input [31:0] s_axis_tdata, // Transfer Data (optional)
     (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S_AXIS TKEEP" *)
-    input [2:0] s_axis_tkeep, // Transfer Null Byte Indicators (optional)
+    input [3:0] s_axis_tkeep, // Transfer Null Byte Indicators (optional)
     (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S_AXIS TLAST" *)
     input s_axis_tlast, // Packet Boundary Indicator (optional)
     (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S_AXIS TVALID" *)

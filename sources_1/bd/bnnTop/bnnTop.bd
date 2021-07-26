@@ -18,7 +18,6 @@
       "axi_crossbar_1": "",
       "axi_intc_0": "",
       "xlconcat_0": "",
-      "systolic_array_wrapp_0": "",
       "axi_apb_bridge_0": "",
       "axi_bram_ctrl_2": "",
       "axi_cdma_1": "",
@@ -26,6 +25,7 @@
       "axi_crossbar_2": "",
       "axi_bram_ctrl_4": "",
       "registers_0": "",
+      "systolic_array_wrapp_0": "",
       "activationsTop_wrapp_0": "",
       "partialsumsTop_wrapp_0": ""
     },
@@ -368,128 +368,6 @@
           }
         }
       },
-      "systolic_array_wrapp_0": {
-        "vlnv": "xilinx.com:module_ref:systolic_array_wrapper:1.0",
-        "xci_name": "bnnTop_systolic_array_wrapp_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "systolic_array_wrapper",
-          "boundary_crc": "0x0"
-        },
-        "interface_ports": {
-          "S_AXIS": {
-            "mode": "Slave",
-            "vlnv": "xilinx.com:interface:axis_rtl:1.0",
-            "parameters": {
-              "TDATA_NUM_BYTES": {
-                "value": "4",
-                "value_src": "constant"
-              },
-              "TDEST_WIDTH": {
-                "value": "0",
-                "value_src": "constant"
-              },
-              "TID_WIDTH": {
-                "value": "0",
-                "value_src": "constant"
-              },
-              "TUSER_WIDTH": {
-                "value": "0",
-                "value_src": "constant"
-              },
-              "HAS_TREADY": {
-                "value": "1",
-                "value_src": "constant"
-              },
-              "HAS_TSTRB": {
-                "value": "0",
-                "value_src": "constant"
-              },
-              "HAS_TKEEP": {
-                "value": "1",
-                "value_src": "constant"
-              },
-              "HAS_TLAST": {
-                "value": "1",
-                "value_src": "constant"
-              },
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "user_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "bnnTop_clk",
-                "value_src": "default_prop"
-              }
-            },
-            "port_maps": {
-              "TDATA": {
-                "physical_name": "s_axis_tdata",
-                "direction": "I",
-                "left": "31",
-                "right": "0"
-              },
-              "TKEEP": {
-                "physical_name": "s_axis_tkeep",
-                "direction": "I",
-                "left": "2",
-                "right": "0"
-              },
-              "TLAST": {
-                "physical_name": "s_axis_tlast",
-                "direction": "I"
-              },
-              "TVALID": {
-                "physical_name": "s_axis_tvalid",
-                "direction": "I"
-              },
-              "TREADY": {
-                "physical_name": "s_axis_tready",
-                "direction": "O"
-              }
-            }
-          }
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I"
-          },
-          "weight_transfer": {
-            "direction": "I"
-          },
-          "activation_in": {
-            "direction": "I",
-            "left": "511",
-            "right": "0"
-          },
-          "activation_in_valid": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "last_row": {
-            "direction": "I",
-            "left": "4",
-            "right": "0"
-          },
-          "last_col": {
-            "direction": "I",
-            "left": "4",
-            "right": "0"
-          },
-          "partialsum_out": {
-            "direction": "O",
-            "left": "511",
-            "right": "0"
-          },
-          "partialsum_out_valid": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          }
-        }
-      },
       "axi_apb_bridge_0": {
         "vlnv": "xilinx.com:ip:axi_apb_bridge:3.0",
         "xci_name": "bnnTop_axi_apb_bridge_0_0",
@@ -714,6 +592,120 @@
           }
         }
       },
+      "systolic_array_wrapp_0": {
+        "vlnv": "xilinx.com:module_ref:systolic_array_wrapper:1.0",
+        "xci_name": "bnnTop_systolic_array_wrapp_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "systolic_array_wrapper",
+          "boundary_crc": "0x0"
+        },
+        "interface_ports": {
+          "S_AXIS": {
+            "mode": "Slave",
+            "vlnv": "xilinx.com:interface:axis_rtl:1.0",
+            "parameters": {
+              "TDATA_NUM_BYTES": {
+                "value": "4",
+                "value_src": "constant"
+              },
+              "TDEST_WIDTH": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "TID_WIDTH": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "TUSER_WIDTH": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "HAS_TREADY": {
+                "value": "1",
+                "value_src": "constant"
+              },
+              "HAS_TSTRB": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "HAS_TKEEP": {
+                "value": "1",
+                "value_src": "constant"
+              },
+              "HAS_TLAST": {
+                "value": "1",
+                "value_src": "constant"
+              }
+            },
+            "port_maps": {
+              "TDATA": {
+                "physical_name": "s_axis_tdata",
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "TKEEP": {
+                "physical_name": "s_axis_tkeep",
+                "direction": "I",
+                "left": "3",
+                "right": "0"
+              },
+              "TLAST": {
+                "physical_name": "s_axis_tlast",
+                "direction": "I"
+              },
+              "TVALID": {
+                "physical_name": "s_axis_tvalid",
+                "direction": "I"
+              },
+              "TREADY": {
+                "physical_name": "s_axis_tready",
+                "direction": "O"
+              }
+            }
+          }
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "weight_transfer": {
+            "direction": "I"
+          },
+          "activation_in": {
+            "direction": "I",
+            "left": "511",
+            "right": "0"
+          },
+          "activation_in_valid": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "last_row": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "last_col": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "partialsum_out": {
+            "direction": "O",
+            "left": "511",
+            "right": "0"
+          },
+          "partialsum_out_valid": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
       "activationsTop_wrapp_0": {
         "vlnv": "xilinx.com:module_ref:activationsTop_wrapper:1.0",
         "xci_name": "bnnTop_activationsTop_wrapp_0_0",
@@ -814,10 +806,6 @@
               "READ_WRITE_MODE": {
                 "value": "READ_WRITE",
                 "value_src": "constant"
-              },
-              "READ_LATENCY": {
-                "value": "1",
-                "value_src": "user_prop"
               }
             },
             "port_maps": {
@@ -828,13 +816,13 @@
               "DIN": {
                 "physical_name": "s_dinb",
                 "direction": "I",
-                "left": "31",
+                "left": "511",
                 "right": "0"
               },
               "WE": {
                 "physical_name": "s_web",
                 "direction": "I",
-                "left": "3",
+                "left": "63",
                 "right": "0"
               },
               "ADDR": {
@@ -1153,7 +1141,6 @@
           "axi_crossbar_1/aclk",
           "axi_dma_0/s_axi_lite_aclk",
           "axi_intc_0/s_axi_aclk",
-          "systolic_array_wrapp_0/clk",
           "axi_apb_bridge_0/s_axi_aclk",
           "axi_bram_ctrl_2/s_axi_aclk",
           "axi_bram_ctrl_3/s_axi_aclk",
@@ -1162,6 +1149,7 @@
           "axi_cdma_1/m_axi_aclk",
           "axi_cdma_1/s_axi_lite_aclk",
           "registers_0/clk",
+          "systolic_array_wrapp_0/clk",
           "activationsTop_wrapp_0/clk",
           "partialsumsTop_wrapp_0/clk"
         ]

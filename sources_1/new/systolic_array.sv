@@ -37,7 +37,7 @@ module systolic_array #(parameter ROWS = 32, parameter COLS = 32)(
     logic [ROWS:0][COLS-1:0] partialsum_valid;
     logic [ROWS:0][COLS-1:0][15:0] partialsum;
     logic [ROWS-1:0][COLS-1:0][15:0] weight, weight_buff;
-    logic [ROWS*COLS-1:0][15:0] weight_buff_d;
+    logic [ROWS*COLS-1:0][15:0] weight_buff_d, weight_buff_flat;
     
     always_ff @(posedge clk) begin
         for(int i = 0; i < ROWS; i += 1) begin
@@ -55,7 +55,13 @@ module systolic_array #(parameter ROWS = 32, parameter COLS = 32)(
         weight_buff_d[0] = s_axis_tdata[15:0];
         weight_buff_d[1] = s_axis_tdata[31:16];
         for(int i = 2; i < ROWS*COLS; i += 1) 
-             weight_buff_d[i] <=  weight_buff_d[i-1];
+             weight_buff_d[i] <=  weight_buff_flat[i-2];
+             
+        for(int i = 0; i < ROWS; i += 1) begin
+            for(int j = 0; j < COLS; j += 1) begin
+                weight_buff_flat[i*COLS+j] <= weight_buff[i][j];
+            end
+        end  
     end
     
     

@@ -43,8 +43,7 @@ module activationsMem(
     
    
     logic [NUM_STATES-1:0] state;
-    logic [5:0] counter;
-    logic [10:0] addr_start_reg;
+    logic [5:0] countrd;
     logic counting1, counting2;
     
     assign activation_in_valid = counting2;
@@ -59,17 +58,16 @@ module activationsMem(
       .clkb(clk),    // input wire clkb
       .enb(state[1]),      // input wire enb
       .web(0),      // input wire [0 : 0] web
-      .addrb(addr_start_reg + counting),  // input wire [10 : 0] addrb
+      .addrb(addr_start + countrd),  // input wire [10 : 0] addrb
       .dinb(0),    // input wire [15 : 0] dinb
       .doutb(activation_in)  // output wire [15 : 0] doutb
     );
     
     
     always_ff @(posedge clk) begin
-        if(resetn) begin
+        if(~resetn) begin
             propogate_start <= 0;
-            counter <= 0;
-            addr_start_reg <= 0;
+            countrd <= 0;
             state <= IDLE;
             counting1 <= 0;
             counting2 <= 0;
@@ -81,13 +79,12 @@ module activationsMem(
             
             if(state == IDLE && start) begin
                 state <= COUNTING;
-                counter <= 0;
-                addr_start_reg <= addr_start;
+                countrd <= 0;
             end
             else if (state == COUNTING) begin
-                if(counter == batch)
+                if(countrd == batch)
                     state <= IDLE;
-                counter <= counter + 1;
+                countrd <= countrd + 1;
             end                
         end
     end

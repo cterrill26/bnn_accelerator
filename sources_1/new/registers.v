@@ -66,7 +66,7 @@ module registers(
     reg [NUM_STATES-1:0] state;
     
     always @ (posedge clk) begin
-        if (resetn) begin
+        if (~resetn) begin
             weight_transfer <= 0;
             last_row <= 0;
             last_col <= 0;
