@@ -42,8 +42,9 @@ module registers(
     output reg [4:0] last_row,
     output reg [4:0] last_col,
     output reg systolic_start,
-    output reg [10:0] activations_addr_start,
-    output reg [5:0] batch
+    output reg [10:0] activations_addr_start, partialsums_addr_start,
+    output reg [5:0] batch,
+    output reg accumulate
     );
     
     //address 0x0 write a 1 to transfer buffered weights
@@ -52,6 +53,8 @@ module registers(
     //address 0xc write a 1 to start the systolic array
     //address 0x10 write the start address of reading out of the activation buffers
     //address 0x14 write the batch size
+    //address 0x18 write the start address of accumulators
+    //address 0x1c write if the accululators sums will start from 0 or accumulate
     
     localparam NUM_STATES = 2;
     localparam IDLE = 1;
@@ -70,6 +73,8 @@ module registers(
             systolic_start <= 0;
             activations_addr_start <= 0;
             batch <= 0;
+            partialsums_addr_start <= 0;
+            accumulate <= 0;
             state <= IDLE;
             s_apb_pslverr <= 0;
         end
@@ -89,6 +94,12 @@ module registers(
             
             if((state == IDLE) && (s_apb_paddr[4:0] == 'h14) && s_apb_psel && s_apb_pwrite)
                 batch <= s_apb_prdata[5:0];
+                
+            if((state == IDLE) && (s_apb_paddr[4:0] == 'h18) && s_apb_psel && s_apb_pwrite)
+                partialsums_addr_start <= s_apb_prdata[10:0];
+            
+            if((state == IDLE) && (s_apb_paddr[4:0] == 'h1c) && s_apb_psel && s_apb_pwrite)
+                accumulate <= s_apb_prdata[0];
             
             if (state == IDLE && s_apb_psel)
                 state <= RESPONDED;

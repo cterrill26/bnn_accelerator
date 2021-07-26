@@ -1,73 +1,81 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.395165",
-   "Default View_TopLeft":"-129,-56",
+   "Default View_ScaleFactor":"1.02483",
+   "Default View_TopLeft":"84,252",
    "ExpandedHierarchyInLayout":"",
+   "PinnedBlocks":"",
    "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
 #  -string -flagsOSRD
-preplace port M00_AXI -pg 1 -lvl 6 -x 2030 -y 740 -defaultsOSRD
-preplace port S_AXI_LITE -pg 1 -lvl 0 -x 0 -y 580 -defaultsOSRD
-preplace port interrupt_0 -pg 1 -lvl 6 -x 2030 -y 850 -defaultsOSRD
-preplace port clk -pg 1 -lvl 0 -x 0 -y 600 -defaultsOSRD
-preplace port resetn -pg 1 -lvl 0 -x 0 -y 620 -defaultsOSRD
-preplace inst blk_mem_gen_0 -pg 1 -lvl 5 -x 1820 -y 650 -defaultsOSRD
-preplace inst axi_bram_ctrl_0 -pg 1 -lvl 4 -x 1420 -y 640 -defaultsOSRD
-preplace inst axi_bram_ctrl_1 -pg 1 -lvl 3 -x 1010 -y 560 -defaultsOSRD
-preplace inst axi_cdma_0 -pg 1 -lvl 2 -x 560 -y 690 -defaultsOSRD
-preplace inst axi_dma_0 -pg 1 -lvl 2 -x 560 -y 510 -defaultsOSRD
-preplace inst axi_crossbar_0 -pg 1 -lvl 3 -x 1010 -y 700 -defaultsOSRD
-preplace inst axi_crossbar_1 -pg 1 -lvl 1 -x 170 -y 600 -defaultsOSRD
-preplace inst axi_intc_0 -pg 1 -lvl 3 -x 1010 -y 850 -defaultsOSRD
-preplace inst xlconcat_0 -pg 1 -lvl 2 -x 560 -y 1070 -defaultsOSRD
-preplace inst systolic_array_wrapp_0 -pg 1 -lvl 3 -x 1010 -y 350 -defaultsOSRD
-preplace inst axi_apb_bridge_0 -pg 1 -lvl 2 -x 560 -y 360 -defaultsOSRD
-preplace inst axi_bram_ctrl_2 -pg 1 -lvl 4 -x 1420 -y 480 -defaultsOSRD
-preplace inst registers_0 -pg 1 -lvl 3 -x 1010 -y 140 -defaultsOSRD
-preplace inst axi_cdma_1 -pg 1 -lvl 2 -x 560 -y 900 -defaultsOSRD
-preplace inst axi_bram_ctrl_3 -pg 1 -lvl 4 -x 1420 -y 930 -defaultsOSRD
-preplace inst axi_crossbar_2 -pg 1 -lvl 3 -x 1010 -y 1030 -defaultsOSRD
-preplace inst axi_bram_ctrl_4 -pg 1 -lvl 4 -x 1420 -y 1070 -defaultsOSRD
-preplace inst activationsTop_wrapp_0 -pg 1 -lvl 5 -x 1820 -y 440 -defaultsOSRD
-preplace netloc clk_1 1 0 5 30 700 330 260 760 940 1260 390 1560
-preplace netloc resetn_1 1 0 5 20 710 340 270 770 950 1270 400 1590
-preplace netloc xlconcat_0_dout 1 2 1 800 880n
-preplace netloc axi_cdma_0_cdma_introut 1 1 2 390 600 730
-preplace netloc axi_dma_0_mm2s_introut 1 1 2 370 280 730
-preplace netloc registers_0_weight_transfer 1 2 2 800 30 1210
-preplace netloc registers_0_last_row 1 2 2 810 480 1210
-preplace netloc registers_0_last_col 1 2 2 790 20 1220
-preplace netloc registers_0_systolic_start 1 3 2 NJ 150 1620
-preplace netloc registers_0_activations_addr_start 1 3 2 NJ 170 1600
-preplace netloc registers_0_batch 1 3 2 NJ 190 1570
-preplace netloc activationsTop_wrapp_0_activation_in 1 2 4 800 470 1220J 310 NJ 310 2000
-preplace netloc activationsTop_wrapp_0_activation_in_valid 1 2 4 780 10 NJ 10 NJ 10 2010
-preplace netloc axi_cdma_1_cdma_introut 1 1 2 380 990 730
-preplace netloc axi_dma_0_M_AXIS_MM2S 1 2 1 750 290n
-preplace netloc axi_crossbar_1_M03_AXI 1 1 1 350 340n
-preplace netloc axi_apb_bridge_0_APB_M 1 2 1 740 120n
-preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 4 1 N 640
-preplace netloc axi_dma_0_M_AXI_MM2S 1 2 1 800 480n
-preplace netloc axi_crossbar_1_M01_AXI 1 1 1 360 580n
-preplace netloc axi_intc_0_interrupt 1 3 3 NJ 850 NJ 850 NJ
-preplace netloc axi_cdma_0_M_AXI 1 2 1 N 680
-preplace netloc axi_crossbar_1_M02_AXI 1 1 2 320J 780 730
-preplace netloc axi_crossbar_0_M01_AXI 1 3 1 1240 620n
-preplace netloc axi_bram_ctrl_1_BRAM_PORTA 1 3 2 NJ 560 1560
-preplace netloc axi_crossbar_1_M00_AXI 1 1 1 360 480n
-preplace netloc S00_AXI_0_1 1 0 1 NJ 580
-preplace netloc axi_crossbar_0_M00_AXI 1 3 3 1250J 740 NJ 740 NJ
-preplace netloc axi_crossbar_0_M02_AXI 1 3 1 1230 460n
-preplace netloc axi_bram_ctrl_2_BRAM_PORTA 1 4 1 1580 370n
-preplace netloc axi_crossbar_1_M04_AXI 1 1 1 310 640n
-preplace netloc axi_cdma_1_M_AXI 1 2 1 740 890n
-preplace netloc axi_crossbar_2_M00_AXI 1 3 1 1280 910n
-preplace netloc axi_crossbar_2_M01_AXI 1 3 1 1220 1040n
-preplace netloc axi_bram_ctrl_4_BRAM_PORTA 1 4 1 1610 390n
-levelinfo -pg 1 0 170 560 1010 1420 1820 2030
-pagesize -pg 1 -db -bbox -sgen -130 0 2150 1150
+preplace port M00_AXI -pg 1 -lvl 6 -x 2120 -y 1030 -defaultsOSRD
+preplace port S_AXI_LITE -pg 1 -lvl 0 -x 0 -y 650 -defaultsOSRD
+preplace port interrupt_0 -pg 1 -lvl 6 -x 2120 -y 1080 -defaultsOSRD
+preplace port clk -pg 1 -lvl 0 -x 0 -y 670 -defaultsOSRD
+preplace port resetn -pg 1 -lvl 0 -x 0 -y 690 -defaultsOSRD
+preplace inst blk_mem_gen_0 -pg 1 -lvl 5 -x 1910 -y 860 -defaultsOSRD
+preplace inst axi_bram_ctrl_0 -pg 1 -lvl 4 -x 1460 -y 950 -defaultsOSRD
+preplace inst axi_bram_ctrl_1 -pg 1 -lvl 3 -x 1020 -y 790 -defaultsOSRD
+preplace inst axi_cdma_0 -pg 1 -lvl 2 -x 560 -y 920 -defaultsOSRD
+preplace inst axi_dma_0 -pg 1 -lvl 2 -x 560 -y 580 -defaultsOSRD
+preplace inst axi_crossbar_0 -pg 1 -lvl 3 -x 1020 -y 930 -defaultsOSRD
+preplace inst axi_crossbar_1 -pg 1 -lvl 1 -x 170 -y 670 -defaultsOSRD
+preplace inst axi_intc_0 -pg 1 -lvl 3 -x 1020 -y 1080 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 2 -x 560 -y 1120 -defaultsOSRD
+preplace inst systolic_array_wrapp_0 -pg 1 -lvl 3 -x 1020 -y 410 -defaultsOSRD
+preplace inst axi_apb_bridge_0 -pg 1 -lvl 2 -x 560 -y 390 -defaultsOSRD
+preplace inst axi_bram_ctrl_2 -pg 1 -lvl 4 -x 1460 -y 790 -defaultsOSRD
+preplace inst axi_cdma_1 -pg 1 -lvl 2 -x 560 -y 740 -defaultsOSRD
+preplace inst axi_bram_ctrl_3 -pg 1 -lvl 4 -x 1460 -y 490 -defaultsOSRD
+preplace inst axi_crossbar_2 -pg 1 -lvl 3 -x 1020 -y 620 -defaultsOSRD
+preplace inst axi_bram_ctrl_4 -pg 1 -lvl 4 -x 1460 -y 630 -defaultsOSRD
+preplace inst registers_0 -pg 1 -lvl 3 -x 1020 -y 130 -defaultsOSRD
+preplace inst activationsTop_wrapp_0 -pg 1 -lvl 5 -x 1910 -y 650 -defaultsOSRD
+preplace inst partialsumsTop_wrapp_0 -pg 1 -lvl 5 -x 1910 -y 370 -defaultsOSRD
+preplace netloc clk_1 1 0 5 30 770 340 310 760 700 1320 380 1720
+preplace netloc resetn_1 1 0 5 20 780 350 470 770 710 1290 360 1700
+preplace netloc xlconcat_0_dout 1 2 1 770 1110n
+preplace netloc axi_cdma_0_cdma_introut 1 1 2 390 1010 730
+preplace netloc axi_dma_0_mm2s_introut 1 1 2 370 830 730
+preplace netloc registers_0_weight_transfer 1 2 2 800 290 1230
+preplace netloc registers_0_last_row 1 2 2 790 280 1220
+preplace netloc registers_0_last_col 1 2 3 810 540 1260 370 1660
+preplace netloc registers_0_systolic_start 1 3 2 1320 130 1670J
+preplace netloc registers_0_activations_addr_start 1 3 2 NJ 140 1650
+preplace netloc registers_0_batch 1 3 2 NJ 180 1610
+preplace netloc activationsTop_wrapp_0_activation_in 1 2 4 800 530 1270J 390 1640J 520 2090
+preplace netloc activationsTop_wrapp_0_activation_in_valid 1 2 4 780 270 1240J 210 NJ 210 2100
+preplace netloc axi_cdma_1_cdma_introut 1 1 2 380 1020 740
+preplace netloc systolic_array_wrapp_0_partialsum_out 1 3 2 N 400 1600J
+preplace netloc systolic_array_wrapp_0_partialsum_out_valid 1 3 2 1280 410 1630J
+preplace netloc registers_0_partialsums_addr_start 1 3 2 NJ 160 1730
+preplace netloc registers_0_accumulate 1 3 2 NJ 200 1710
+preplace netloc partialsumsTop_wrapp_0_done 1 1 5 360 260 NJ 260 1250J 220 NJ 220 2090
+preplace netloc axi_bram_ctrl_4_BRAM_PORTA 1 4 1 1690 600n
+preplace netloc axi_apb_bridge_0_APB_M 1 2 1 730 110n
+preplace netloc axi_crossbar_1_M01_AXI 1 1 1 330 650n
+preplace netloc axi_dma_0_M_AXIS_MM2S 1 2 1 740 350n
+preplace netloc axi_crossbar_1_M00_AXI 1 1 1 330 550n
+preplace netloc S00_AXI_0_1 1 0 1 NJ 650
+preplace netloc axi_bram_ctrl_1_BRAM_PORTA 1 3 2 1240 870 NJ
+preplace netloc axi_crossbar_1_M03_AXI 1 1 1 320 370n
+preplace netloc axi_dma_0_M_AXI_MM2S 1 2 1 750 550n
+preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 4 1 1660 850n
+preplace netloc axi_intc_0_interrupt 1 3 3 NJ 1080 NJ 1080 NJ
+preplace netloc axi_crossbar_1_M02_AXI 1 1 2 310 1030 730J
+preplace netloc axi_crossbar_0_M01_AXI 1 3 1 N 930
+preplace netloc axi_cdma_0_M_AXI 1 2 1 N 910
+preplace netloc axi_cdma_1_M_AXI 1 2 1 800 600n
+preplace netloc axi_crossbar_2_M01_AXI 1 3 1 1310 610n
+preplace netloc axi_bram_ctrl_2_BRAM_PORTA 1 4 1 1680 580n
+preplace netloc axi_crossbar_0_M02_AXI 1 3 1 1310 770n
+preplace netloc axi_crossbar_2_M00_AXI 1 3 1 1300 470n
+preplace netloc axi_crossbar_1_M04_AXI 1 1 1 N 710
+preplace netloc axi_crossbar_0_M00_AXI 1 3 3 1240J 1030 NJ 1030 NJ
+preplace netloc axi_bram_ctrl_3_BRAM_PORTA 1 4 1 1620 280n
+levelinfo -pg 1 0 170 560 1020 1460 1910 2120
+pagesize -pg 1 -db -bbox -sgen -130 0 2240 1210
 "
 }
 {
    "da_board_cnt":"1",
-   "da_clkrst_cnt":"20"
+   "da_clkrst_cnt":"21"
 }

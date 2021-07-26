@@ -23,7 +23,7 @@
 module activationsTop_wrapper(
     (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTA EN" *)
     // Uncomment the following to set interface specific parameter on the bus interface.
-    (* X_INTERFACE_PARAMETER = "MASTER_TYPE Stand Alone,MEM_ECC None,MEM_WIDTH 32,MEM_SIZE 131072, READ_LATENCY 3,READ_WRITE_MODE READ WRITE" *)
+    (* X_INTERFACE_PARAMETER = "MASTER_TYPE BRAM_CTRL,MEM_ECC None,MEM_WIDTH 32,MEM_SIZE 131072, READ_LATENCY 3,READ_WRITE_MODE READ_WRITE" *)
     input s_ena, // Chip Enable Signal (optional)
     (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTA DOUT" *)
     output [31:0] s_douta, // Data Out Bus (optional)
@@ -39,7 +39,7 @@ module activationsTop_wrapper(
     input s_rsta, // Reset Signal (required)
     (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTB EN" *)
     // Uncomment the following to set interface specific parameter on the bus interface.
-    (* X_INTERFACE_PARAMETER = "MASTER_TYPE Stand Alone,MEM_ECC None,MEM_WIDTH 512,MEM_SIZE 131072,READ_WRITE_MODE WRITE ONLY" *)
+    (* X_INTERFACE_PARAMETER = "MASTER_TYPE BRAM_CTRL,MEM_ECC None,MEM_WIDTH 512,MEM_SIZE 131072,READ_WRITE_MODE READ_WRITE" *)
     input s_enb, // Chip Enable Signal (optional)
     //(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTB DOUT" *)
     //output [31:0] s_doutb, // Data Out Bus (optional)
