@@ -2,14 +2,14 @@
 <Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="bnnTop" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="RESET" Timestamp="1627277924"/>
-    <Generation Name="IMPLEMENTATION" State="RESET" Timestamp="1627277924"/>
-    <Generation Name="SIMULATION" State="RESET" Timestamp="1627277924"/>
-    <Generation Name="HW_HANDOFF" State="RESET" Timestamp="1627277924"/>
+    <Generation Name="SYNTHESIS" State="RESET" Timestamp="1627342394"/>
+    <Generation Name="IMPLEMENTATION" State="RESET" Timestamp="1627342394"/>
+    <Generation Name="SIMULATION" State="RESET" Timestamp="1627342394"/>
+    <Generation Name="HW_HANDOFF" State="RESET" Timestamp="1627342394"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\bnnTop_blk_mem_gen_0_1\bnnTop_blk_mem_gen_0_1.xci" Type="IP">
         <Instance HierarchyPath="blk_mem_gen_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1627258228" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
@@ -17,7 +17,7 @@
       </File>
       <File Name="ip\bnnTop_axi_bram_ctrl_0_1\bnnTop_axi_bram_ctrl_0_1.xci" Type="IP">
         <Instance HierarchyPath="axi_bram_ctrl_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1627256624" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
@@ -25,7 +25,7 @@
       </File>
       <File Name="ip\bnnTop_axi_bram_ctrl_1_1\bnnTop_axi_bram_ctrl_1_1.xci" Type="IP">
         <Instance HierarchyPath="axi_bram_ctrl_1"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1627256624" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
@@ -33,7 +33,7 @@
       </File>
       <File Name="ip\bnnTop_axi_cdma_0_0\bnnTop_axi_cdma_0_0.xci" Type="IP">
         <Instance HierarchyPath="axi_cdma_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1627153925" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
@@ -41,7 +41,7 @@
       </File>
       <File Name="ip\bnnTop_axi_dma_0_0\bnnTop_axi_dma_0_0.xci" Type="IP">
         <Instance HierarchyPath="axi_dma_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1627153925" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
@@ -49,7 +49,7 @@
       </File>
       <File Name="ip\bnnTop_axi_crossbar_0_0\bnnTop_axi_crossbar_0_0.xci" Type="IP">
         <Instance HierarchyPath="axi_crossbar_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1627256625" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
@@ -57,7 +57,7 @@
       </File>
       <File Name="ip\bnnTop_axi_crossbar_1_0\bnnTop_axi_crossbar_1_0.xci" Type="IP">
         <Instance HierarchyPath="axi_crossbar_1"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1627256625" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
@@ -65,7 +65,7 @@
       </File>
       <File Name="ip\bnnTop_axi_intc_0_0\bnnTop_axi_intc_0_0.xci" Type="IP">
         <Instance HierarchyPath="axi_intc_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1627254181" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
@@ -73,7 +73,7 @@
       </File>
       <File Name="ip\bnnTop_xlconcat_0_0\bnnTop_xlconcat_0_0.xci" Type="IP">
         <Instance HierarchyPath="xlconcat_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1627253405" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
@@ -81,7 +81,7 @@
       </File>
       <File Name="ip\bnnTop_systolic_array_wrapp_0_0\bnnTop_systolic_array_wrapp_0_0.xci" Type="IP">
         <Instance HierarchyPath="systolic_array_wrapp_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1627275675" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
@@ -89,7 +89,7 @@
       </File>
       <File Name="ip\bnnTop_axi_apb_bridge_0_0\bnnTop_axi_apb_bridge_0_0.xci" Type="IP">
         <Instance HierarchyPath="axi_apb_bridge_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1627256625" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
@@ -97,7 +97,7 @@
       </File>
       <File Name="ip\bnnTop_registers_0_0\bnnTop_registers_0_0.xci" Type="IP">
         <Instance HierarchyPath="registers_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1627275672" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
@@ -105,7 +105,7 @@
       </File>
       <File Name="ip\bnnTop_axi_bram_ctrl_2_0\bnnTop_axi_bram_ctrl_2_0.xci" Type="IP">
         <Instance HierarchyPath="axi_bram_ctrl_2"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1627256625" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
@@ -113,7 +113,7 @@
       </File>
       <File Name="ip\bnnTop_activationsTop_wrapp_0_0\bnnTop_activationsTop_wrapp_0_0.xci" Type="IP">
         <Instance HierarchyPath="activationsTop_wrapp_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1627277164" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
@@ -121,7 +121,7 @@
       </File>
       <File Name="ip\bnnTop_axi_cdma_1_0\bnnTop_axi_cdma_1_0.xci" Type="IP">
         <Instance HierarchyPath="axi_cdma_1"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1627240821" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
@@ -129,7 +129,7 @@
       </File>
       <File Name="ip\bnnTop_axi_bram_ctrl_3_0\bnnTop_axi_bram_ctrl_3_0.xci" Type="IP">
         <Instance HierarchyPath="axi_bram_ctrl_3"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1627257271" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
@@ -137,7 +137,7 @@
       </File>
       <File Name="ip\bnnTop_axi_crossbar_2_0\bnnTop_axi_crossbar_2_0.xci" Type="IP">
         <Instance HierarchyPath="axi_crossbar_2"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1627256625" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
@@ -145,7 +145,7 @@
       </File>
       <File Name="ip\bnnTop_axi_bram_ctrl_4_0\bnnTop_axi_bram_ctrl_4_0.xci" Type="IP">
         <Instance HierarchyPath="axi_bram_ctrl_4"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1627256625" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
@@ -153,7 +153,7 @@
       </File>
       <File Name="ip\bnnTop_partialsumsTop_wrapp_0_0\bnnTop_partialsumsTop_wrapp_0_0.xci" Type="IP">
         <Instance HierarchyPath="partialsumsTop_wrapp_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="1627277924" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>

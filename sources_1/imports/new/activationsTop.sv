@@ -38,7 +38,7 @@ module activationsTop(
     output [32-1:0] activation_in_valid
     );
     
-    logic [31:0][16:0] read_data;
+    logic [31:0][15:0] read_data;
     
     logic s_en1, s_en2;
     logic [3:0] s_addr1, s_addr2;

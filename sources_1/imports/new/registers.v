@@ -79,27 +79,27 @@ module registers(
             s_apb_pslverr <= 0;
         end
         else begin
-            weight_transfer <= (state == IDLE) && (s_apb_paddr[4:0] == 'h0) && s_apb_psel && s_apb_pwrite && s_apb_prdata[0];
-            systolic_start  <= (state == IDLE) && (s_apb_paddr[4:0] == 'hc) && s_apb_psel && s_apb_pwrite && s_apb_prdata[0];
+            weight_transfer <= (state == IDLE) && (s_apb_paddr[4:0] == 'h0) && s_apb_psel && s_apb_pwrite && s_apb_pwdata[0];
+            systolic_start  <= (state == IDLE) && (s_apb_paddr[4:0] == 'hc) && s_apb_psel && s_apb_pwrite && s_apb_pwdata[0];
             
             
             if((state == IDLE) && (s_apb_paddr[4:0] == 'h4) && s_apb_psel && s_apb_pwrite)
-                last_row <= s_apb_prdata[4:0];
+                last_row <= s_apb_pwdata[4:0];
             
             if((state == IDLE) && (s_apb_paddr[4:0] == 'h8) && s_apb_psel && s_apb_pwrite)
-                last_col <= s_apb_prdata[4:0];
+                last_col <= s_apb_pwdata[4:0];
             
             if((state == IDLE) && (s_apb_paddr[4:0] == 'h10) && s_apb_psel && s_apb_pwrite)
-                activations_addr_start <= s_apb_prdata[10:0];
+                activations_addr_start <= s_apb_pwdata[10:0];
             
             if((state == IDLE) && (s_apb_paddr[4:0] == 'h14) && s_apb_psel && s_apb_pwrite)
-                batch <= s_apb_prdata[5:0];
+                batch <= s_apb_pwdata[5:0];
                 
             if((state == IDLE) && (s_apb_paddr[4:0] == 'h18) && s_apb_psel && s_apb_pwrite)
-                partialsums_addr_start <= s_apb_prdata[10:0];
+                partialsums_addr_start <= s_apb_pwdata[10:0];
             
             if((state == IDLE) && (s_apb_paddr[4:0] == 'h1c) && s_apb_psel && s_apb_pwrite)
-                accumulate <= s_apb_prdata[0];
+                accumulate <= s_apb_pwdata[0];
             
             if (state == IDLE && s_apb_psel)
                 state <= RESPONDED;
