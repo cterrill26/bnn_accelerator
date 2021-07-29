@@ -64,6 +64,7 @@ module bnnTop_partialsumsTop_wrapp_0_0 (
   resetn,
   start,
   accumulate,
+  interrupt_en,
   address_start,
   batch,
   partialsum_out,
@@ -91,6 +92,7 @@ input wire clk;
 input wire resetn;
 input wire start;
 input wire accumulate;
+input wire interrupt_en;
 input wire [10 : 0] address_start;
 input wire [5 : 0] batch;
 input wire [511 : 0] partialsum_out;
@@ -110,6 +112,7 @@ output wire done;
     .resetn(resetn),
     .start(start),
     .accumulate(accumulate),
+    .interrupt_en(interrupt_en),
     .address_start(address_start),
     .batch(batch),
     .partialsum_out(partialsum_out),
